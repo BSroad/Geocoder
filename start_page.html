@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Geocoder</title>
+    <head>
+        <h1>Geocoder</h1>
+        <link href="../static/style.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet'>
+    </head>
+        <body>
+            <div class="container">
+                <h2>Please upload your CSV file.</h2>
+                <h4>The values containing addresses should be <br> in a column named
+                    <i>address</i> or <i>Address</i>.
+                </h4>
+                <div class="message">{{text | safe}}</div>
+
+                <form action="{{url_for('success')}}" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file">
+
+                    <button type="submit"> Submit </button>
+                </form>
+            </div>
+            {{ table|safe }}
+            {% include btn ignore missing%}
+            {% include button ignore missing%}
+
+        </body>
+</html>
